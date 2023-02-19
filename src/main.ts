@@ -1,20 +1,21 @@
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
-
 import App from '@/App.vue'
 import router from '@/router'
 import './assets/main.css'
+import ElementPlus from 'element-plus'
+import 'element-plus/dist/index.css'
 import { log } from '@/libs/utils'
 
-log.danger(import.meta.env)
-log.danger(process.env)
+console.log(import.meta.env)
+// @ts-ignore
+console.log(process.env)
 log.capsule('Environment', `${import.meta.env.MODE}`, 'primary')
+// @ts-ignore
 log.capsule('Version', `${process.env.APP_VERSION}`, 'primary')
+// @ts-ignore
 log.capsule('BuildTime', `${process.env.APP_BUILD_TIME}`, 'primary')
 
 const app = createApp(App)
 
-app.use(createPinia())
-app.use(router)
-
-app.mount('#app')
+app.use(createPinia()).use(router).use(ElementPlus).mount('#app')

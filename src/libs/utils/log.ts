@@ -5,7 +5,6 @@
  */
 
 interface ILog {
-    [propName: string]: any // 这个的意思是，属性的名字是字符串类型，属性的值可以是任何类型。
     capsule: (title: any, info: any, type: string) => void
     colorful: (textArr: any[]) => void
     default: (text: any) => void
