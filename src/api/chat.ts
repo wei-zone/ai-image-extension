@@ -32,7 +32,7 @@ export const generate = async (input: string) => {
             model: 'image-alpha-001',
             prompt: input
         })
-        return { code: 200, data: completion.data.choices[0].text }
+        return { code: 200, data: completion.data.data }
     } catch (error: any) {
         // Consider adjusting the error handling logic for your use case
         if (error.response) {

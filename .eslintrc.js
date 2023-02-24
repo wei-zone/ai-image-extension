@@ -27,7 +27,8 @@ module.exports = defineConfig({
         'plugin:vue/vue3-recommended',
         'eslint:recommended',
         'plugin:@typescript-eslint/recommended', // typescript-eslint推荐规则,
-        'plugin:prettier/recommended'
+        'plugin:prettier/recommended',
+        'vue-global-api'
     ],
     rules: {}
 })
