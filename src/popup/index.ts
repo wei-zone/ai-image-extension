@@ -1,6 +1,6 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import './app.css'
+import './app.scss'
 
 import { log } from '@/plugin'
 console.log(import.meta.env)

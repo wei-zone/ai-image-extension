@@ -1,7 +1,9 @@
 {
-    "name": "ai-chat",
+    "name": "ai-image",
     "version": "1.0.0",
     "private": true,
+    "author": "wforguo@gmail.com",
+    "description": "AiImage, Chrome plugin, OpenAi Image, ChatGpt",
     "scripts": {
         "dev": "cross-env CRX_ENV=development run-p dev:*",
         "dev:code": "vite build",

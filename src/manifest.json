@@ -1,17 +1,17 @@
 {
-    "name": "AiChat",
+    "name": "Ai绘图",
     "version": "1.0.0",
     "manifest_version": 3,
     "author": "wforguo@gmail.com",
-    "description": "AiChat, ChatGpt Chrome Plugin",
+    "description": "AiImage, Chrome plugin, OpenAi Image, ChatGpt",
     "icons": {
-        "16": "/assets/img/dev.png",
-        "48": "/assets/img/dev.png",
-        "96": "/assets/img/dev.png",
-        "128": "/assets/img/dev.png"
+        "16": "/assets/img/logo.png",
+        "48": "/assets/img/logo.png",
+        "96": "/assets/img/logo.png",
+        "128": "/assets/img/logo.png"
     },
     "action": {
-        "default_title": "AiChat",
+        "default_title": "Ai绘图",
         "default_popup": "/popup/index.html"
     },
     "permissions": [
@@ -28,26 +28,5 @@
     },
     "background": {
         "service_worker": "/background/index.js"
-    },
-    "content_scripts": [
-        {
-            "matches": [
-                "<all_urls>"
-            ],
-            "js": [
-                "/contentScript/index.js"
-            ],
-            "run_at": "document_end"
-        }
-    ],
-    "web_accessible_resources": [
-        {
-            "resources": [
-                "contentScript/style.css"
-            ],
-            "matches": [
-                "<all_urls>"
-            ]
-        }
-    ]
+    }
 }

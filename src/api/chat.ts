@@ -15,7 +15,7 @@ export const generate = async (input: string) => {
     if (!configuration.apiKey) {
         return {
             code: 500,
-            message: 'OpenAI API key not configured, please follow instructions in README.md'
+            message: 'OpenAI API key not configured'
         }
     }
 
@@ -23,14 +23,16 @@ export const generate = async (input: string) => {
     if (animal.trim().length === 0) {
         return {
             code: 500,
-            message: 'Please enter a valid animal'
+            message: '请输入关键词'
         }
     }
 
     try {
+        // https://platform.openai.com/docs/guides/images
         const completion = await openai.createImage({
-            model: 'image-alpha-001',
-            prompt: input
+            n: 1,
+            prompt: input,
+            size: '256x256'
         })
         return { code: 200, data: completion.data.data }
     } catch (error: any) {
@@ -50,17 +52,6 @@ export const generate = async (input: string) => {
             }
         }
     }
-}
-
-function generatePrompt(input: string) {
-    return `Suggest three names for an animal that is a superhero.
-
-Animal: Cat
-Names: Captain Sharpclaw, Agent Fluffball, The Incredible Feline
-Animal: Dog
-Names: Ruff the Protector, Wonder Canine, Sir Barks-a-Lot
-Animal: ${input}
-Names:`
 }
 
 export const answer = (input: string) => {
